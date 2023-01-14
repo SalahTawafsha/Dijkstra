@@ -55,7 +55,7 @@ public class Test {
                     if (list.get(i).country().getDistance() + list.get(i).cost() < list.get(i).country().getDistance()) {
                         list.get(i).country().setDistance(from.getDistance() + list.get(i).cost());
                         list.get(i).country().setPath(v);
-                        System.out.println(v);
+                        System.out.println("path: " + v);
                     }
             }
 
