@@ -1,12 +1,12 @@
 package com.example.dijkstra;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.*;
@@ -18,6 +18,8 @@ public class MapController implements Initializable {
 
     @FXML
     private TextArea path;
+    @FXML
+    private Pane pane;
 
     @FXML
     private ComboBox<String> source;
@@ -153,5 +155,9 @@ public class MapController implements Initializable {
         Collections.sort(items);
 
         source.setItems(FXCollections.observableArrayList(items));
+
+//        b.setLayoutX((x + 180.0) / 360 * 1248 - 50);
+//        b.setLayoutY(921 - ((y + 90.0) / 180 * 889 + 37));
+
     }
 }
