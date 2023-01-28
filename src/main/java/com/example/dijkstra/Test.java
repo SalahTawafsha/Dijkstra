@@ -35,46 +35,75 @@ public class Test {
 
         graph.forEach((country, nodes) -> System.out.println(country + " " + nodes));
 
-        dijkstra(graph, get(new Country("Country3"), graph.keySet()), get(new Country("Country5"), graph.keySet()));
+        dijkstra(graph, get(new Country("Country1"), graph.keySet()));
     }
 
-    public static void dijkstra(HashMap<Country, LinkedList<Node>> graph, Country from, Country to) {
-        from.setDistance(0);
+    public static void dijkstra(HashMap<Country, LinkedList<Node>> graph, Country from) {
 
-        Country v, w;
+        Table[] table = new Table[graph.size()];
+
+        fillTable(table, graph.keySet(), from);
+        Country v;
 
         while (true) {
-            v = smallest(graph);
+            int index = smallest(table);
+            v = (index != -1) ? table[index].getHeader() : null;
+
             if (v == null)
-                return;
-            get(v, graph.keySet()).setKnown(true);
+                break;
+            System.out.println(table[index].getHeader());
+            table[index].setKnown(true);
 
             LinkedList<Node> list = graph.get(v);
-            for (int i = 0; i < list.size(); i++) {
-                if (!list.get(i).country().getKnown())
-                    if (list.get(i).country().getDistance() + list.get(i).cost() < list.get(i).country().getDistance()) {
-                        list.get(i).country().setDistance(from.getDistance() + list.get(i).cost());
-                        list.get(i).country().setPath(v);
+            for (Node node : list) {
+                int j = find(node, table);
+                if (!table[j].isKnown()) {
+                    if (table[index].getDistance() + node.cost() < table[j].getDistance()) {
+                        table[j].setDistance(table[index].getDistance() + node.cost());
+                        table[j].setPrev(v);
                         System.out.println("path: " + v);
                     }
+                }
             }
 
+        }
+
+        for (Table value : table) {
+            System.out.println(value.getHeader() + "\t" + value.isKnown() + "\t" + value.distance + "\t" + value.prev);
         }
 
 
     }
 
-    static Country country = null;
-    static int min = Integer.MAX_VALUE;
+    private static int find(Node node, Table[] table) {
+        for (int i = 0; i < table.length; i++) {
+            if (table[i].getHeader().equals(node.country()))
+                return i;
+        }
+        return 0;
+    }
 
-    private static Country smallest(HashMap<Country, LinkedList<Node>> graph) {
-        graph.forEach((c, l) -> {
-            if (l.size() < min) {
-                min = l.size();
-                country = c;
+    private static void fillTable(Table[] table, Set<Country> all, Country from) {
+        int i = 0;
+        for (Country one : all) {
+            table[i++] = new Table(one);
+            if (from.equals(one))
+                table[i - 1].setDistance(0);
+        }
+    }
+
+
+    private static int smallest(Table[] graph) {
+        double d = Double.MAX_VALUE;
+        int index = -1;
+        for (int i = 0; i < graph.length; i++) {
+            System.out.println(graph[i]);
+            if (!graph[i].isKnown() && graph[i].getDistance() < d) {
+                d = graph[i].getDistance();
+                index = i;
             }
-        });
-        return country;
+        }
+        return index;
     }
 
     private static double findCost(Country c1, Country c2) {
