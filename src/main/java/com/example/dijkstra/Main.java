@@ -31,11 +31,7 @@ public class Main extends Application {
         file.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("TXT files", ".txt"));
         file.setTitle("Select the file Of Countries.");
         Button select = new Button("Select the file of countries.");
-        select.setStyle("""
-                -fx-background-color: pink;
-                    -fx-background-radius: 40;
-                    -fx-border-color: black;
-                    -fx-border-radius: 40;""");
+
         select.setMinSize(200, 50);
 
         select.setOnAction(e -> {
@@ -51,12 +47,12 @@ public class Main extends Application {
                 double edges = scan.nextDouble();
                 scan.nextLine();
                 while (countries-- != 0) {
-                    String[] tokens = scan.nextLine().split(" ");
-                    graph.put(new Country(tokens[0], Double.parseDouble(tokens[1]), Double.parseDouble(tokens[2])), new LinkedList<>());
+                    String[] tokens = scan.nextLine().split(",");
+                    graph.put(new Country(tokens[0], Double.parseDouble(tokens[2]), Double.parseDouble(tokens[1])), new LinkedList<>());
                 }
 
                 while (edges-- != 0) {
-                    String[] tokens = scan.nextLine().split(" ");
+                    String[] tokens = scan.nextLine().split(",");
                     Country c1 = get(new Country(tokens[0]), graph.keySet());
                     Country c2 = get(new Country(tokens[1]), graph.keySet());
 
@@ -75,6 +71,12 @@ public class Main extends Application {
                 error.show();
             }
         });
+
+        select.setStyle("""
+                -fx-background-color: pink;
+                    -fx-background-radius: 40;
+                    -fx-border-color: black;
+                    -fx-border-radius: 40;""");
         BorderPane pane = new BorderPane(select);
         pane.setBackground(new Background(new BackgroundFill(Color.rgb(171, 225, 243), null, null)));
         Scene scene = new Scene(pane);
@@ -92,7 +94,9 @@ public class Main extends Application {
 
 
     private static double findCost(Country c1, Country c2) {
-        return Math.sqrt((Math.pow(c2.getX() - c1.getX(), 2) + Math.pow(c2.getY() - c1.getY(), 2)));
+        //(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
+        // latitude = y
+        return Math.acos(Math.sin(c1.getY()) * Math.sin(c2.getY()) + Math.cos(c1.getY()) * Math.cos(c2.getY()) * Math.cos(c2.getX() - c1.getX())) * 6371;
     }
 
     static Country get(Country sample, Set<Country> all) {
