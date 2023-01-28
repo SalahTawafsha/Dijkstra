@@ -1,10 +1,10 @@
 package com.example.dijkstra;
 
 public class Table {
-    Country header;
-    boolean known = false;
-    double distance = 1000000;
-    Country prev;
+    private final Country header;
+    private boolean known = false;
+    private double distance = 1000000;
+    private int prev;
 
     public Table(Country header) {
         this.header = header;
@@ -14,8 +14,12 @@ public class Table {
         return header;
     }
 
-    public boolean isKnown() {
-        return known;
+    public int getPrev() {
+        return prev;
+    }
+
+    public boolean notKnown() {
+        return !known;
     }
 
     public void setKnown(boolean known) {
@@ -30,7 +34,7 @@ public class Table {
         this.distance = distance;
     }
 
-    public void setPrev(Country prev) {
+    public void setPrev(int prev) {
         this.prev = prev;
     }
 
