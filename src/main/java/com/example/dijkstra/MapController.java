@@ -26,6 +26,7 @@ public class MapController implements Initializable {
     private ComboBox<String> target;
 
     private final Alert error = new Alert(Alert.AlertType.ERROR);
+    ArrayList<String> items = new ArrayList<>();
 
 
     private final Table[] table = new Table[Main.getGraph().size()];
@@ -35,6 +36,7 @@ public class MapController implements Initializable {
         if (source.getValue() != null && target.getValue() != null) {
             dijkstra(get(new Country(source.getValue())));
 
+            System.out.println("done");
             String s = target.getValue();
 
             int i = indexOf(new Country(target.getValue()));
@@ -42,7 +44,7 @@ public class MapController implements Initializable {
             StringBuilder path = new StringBuilder(table[i].getHeader().getName());
             while (!s.equals(source.getValue())) {
                 i = table[i].getPrev();
-                path.insert(0, table[i].getHeader().getName() + "->");
+                path.insert(0, table[i].getHeader().getName() + "\n⬇\n");
                 s = table[i].getHeader().getName();
             }
             this.path.setText(path.toString());
@@ -51,6 +53,11 @@ public class MapController implements Initializable {
             error.setContentText("You must fill source and target before calculate");
             error.show();
         }
+    }
+
+    @FXML
+    void back() {
+        Main.main(new String[0]);
     }
 
     public void dijkstra(Country from) {
@@ -137,14 +144,13 @@ public class MapController implements Initializable {
         return index;
     }
 
-    ArrayList<String> items = new ArrayList<>();
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         for (Country one : Main.getGraph().keySet())
             items.add(one.getName());
 
+        Collections.sort(items);
 
         source.setItems(FXCollections.observableArrayList(items));
     }

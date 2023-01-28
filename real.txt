@@ -1,4 +1,4 @@
-243 0
+243 486
 Andorra,42.546245,1.601554
 United Arab Emirates,23.424076,53.847818
 Afghanistan,33.93911,67.709953
@@ -242,3 +242,489 @@ Mayotte,-12.8275,45.166244
 South Africa,-30.559482,22.937506
 Zambia,-13.133897,27.849332
 Zimbabwe,-19.015438,29.154857
+Andorra,Barbados
+United Arab Emirates,Spain
+Afghanistan,Western Sahara
+Antigua and Barbuda,Dominican Republic
+Anguilla,Antigua and Barbuda
+Albania,Guinea
+Armenia,Finland
+Netherlands Antilles,Saint Lucia
+Angola,Guyana
+Antarctica,Monaco
+Argentina,Bangladesh
+American Samoa,Rwanda
+Austria,Cuba
+Australia,Timor-Leste
+Aruba,Czech Republic
+Azerbaijan,Costa Rica
+Bosnia and Herzegovina,Burkina Faso
+Barbados,Central African Republic
+Bangladesh,S�o Tom� and Pr�ncipe
+Belgium,British Indian Ocean Territory
+Burkina Faso,Armenia
+Bulgaria,Guinea
+Bahrain,Antigua and Barbuda
+Burundi,Mauritania
+Benin,Zambia
+Bermuda,Senegal
+Brunei,Papua New Guinea
+Bolivia,Hungary
+Brazil,Bermuda
+Bahamas,Austria
+Bhutan,Lithuania
+Bouvet Island,British Virgin Islands
+Botswana,Jersey
+Belarus,Barbados
+Belize,Isle of Man
+Canada,Belarus
+Cocos [Keeling] Islands,Armenia
+Congo [DRC],Sweden
+Central African Republic,Guadeloupe
+Congo [Republic],Dominica
+Switzerland,Micronesia
+Cook Islands,Belize
+Chile,Cuba
+Cameroon,Mauritius
+China,Gibraltar
+Colombia,Cape Verde
+Costa Rica,Gabon
+Cuba,Tanzania
+Cape Verde,Russia
+Christmas Island,Cape Verde
+Cyprus,Greece
+Czech Republic,Macau
+Germany,Greenland
+Djibouti,Brazil
+Denmark,Azerbaijan
+Dominica,Pitcairn Islands
+Dominican Republic,Iran
+Algeria,Iran
+Ecuador,Bhutan
+Estonia,Northern Mariana Islands
+Egypt,Belarus
+Western Sahara,Kuwait
+Eritrea,French Guiana
+Spain,France
+Ethiopia,Western Sahara
+Finland,Netherlands Antilles
+Fiji,Palestinian Territories
+Falkland Islands [Islas Malvinas],Madagascar
+Micronesia,Bermuda
+Faroe Islands,Zambia
+France,Moldova
+Gabon,Turkmenistan
+United Kingdom,Malawi
+Grenada,Micronesia
+Georgia,Macau
+French Guiana,Lithuania
+Guernsey,South Korea
+Ghana,Maldives
+Gibraltar,Timor-Leste
+Greenland,Malawi
+Gambia,Tonga
+Guinea,Bermuda
+Guadeloupe,Bouvet Island
+Equatorial Guinea,Panama
+Greece,Central African Republic
+South Georgia and the South Sandwich Islands,Tonga
+Guatemala,Anguilla
+Guam,Nigeria
+Guinea-Bissau,Macau
+Guyana,Slovenia
+Gaza Strip,Sierra Leone
+Hong Kong,Qatar
+Heard Island and McDonald Islands,Martinique
+Honduras,Iraq
+Croatia,Kiribati
+Haiti,Guyana
+Hungary,Comoros
+Indonesia,Zambia
+Ireland,Cocos [Keeling] Islands
+Israel,Comoros
+Isle of Man,Kazakhstan
+India,Uzbekistan
+British Indian Ocean Territory,Philippines
+Iraq,Namibia
+Iran,Botswana
+Iceland,Svalbard and Jan Mayen
+Italy,Senegal
+Jersey,Puerto Rico
+Jamaica,French Polynesia
+Jordan,Aruba
+Japan,Mauritania
+Kenya,Lebanon
+Kyrgyzstan,Qatar
+Cambodia,Taiwan
+Kiribati,Gambia
+Comoros,Lebanon
+Saint Kitts and Nevis,Guatemala
+North Korea,Cambodia
+South Korea,Mauritius
+Kuwait,Yemen
+Cayman Islands,Central African Republic
+Kazakhstan,Wallis and Futuna
+Laos,Niger
+Lebanon,Norway
+Saint Lucia,Iraq
+Liechtenstein,Congo [Republic]
+Sri Lanka,Iceland
+Liberia,Serbia
+Lesotho,Cambodia
+Lithuania,Cayman Islands
+Luxembourg,S�o Tom� and Pr�ncipe
+Latvia,Kenya
+Libya,Argentina
+Morocco,Samoa
+Monaco,Aruba
+Moldova,Bangladesh
+Montenegro,Portugal
+Madagascar,Guatemala
+Marshall Islands,Niger
+Macedonia [FYROM],Yemen
+Mali,Spain
+Myanmar [Burma],Martinique
+Mongolia,Liberia
+Macau,U.S. Virgin Islands
+Northern Mariana Islands,Myanmar [Burma]
+Martinique,Dominican Republic
+Mauritania,Kuwait
+Montserrat,Djibouti
+Malta,Cyprus
+Mauritius,Qatar
+Maldives,R�union
+Malawi,Mozambique
+Mexico,Malaysia
+Malaysia,Tonga
+Mozambique,Gaza Strip
+Namibia,Ethiopia
+New Caledonia,Pitcairn Islands
+Niger,Czech Republic
+Norfolk Island,France
+Nigeria,Tuvalu
+Nicaragua,Ecuador
+Netherlands,Bosnia and Herzegovina
+Norway,Mauritania
+Nepal,Suriname
+Nauru,Wallis and Futuna
+Niue,Timor-Leste
+New Zealand,Singapore
+Oman,Macau
+Panama,Togo
+Peru,Dominican Republic
+French Polynesia,Kiribati
+Papua New Guinea,Fiji
+Philippines,Myanmar [Burma]
+Pakistan,Bhutan
+Poland,Netherlands
+Saint Pierre and Miquelon,Kiribati
+Pitcairn Islands,Netherlands Antilles
+Puerto Rico,Nicaragua
+Palestinian Territories,Brunei
+Portugal,Malta
+Palau,Indonesia
+Paraguay,Mayotte
+Qatar,Bulgaria
+R�union,Guinea-Bissau
+Romania,Saudi Arabia
+Serbia,Saint Lucia
+Russia,Dominica
+Rwanda,Greenland
+Saudi Arabia,Romania
+Solomon Islands,Bangladesh
+Seychelles,Iraq
+Sudan,Congo [DRC]
+Sweden,Kosovo
+Singapore,Saint Helena
+Saint Helena,Moldova
+Slovenia,Wallis and Futuna
+Svalbard and Jan Mayen,Venezuela
+Slovakia,Ecuador
+Sierra Leone,Palestinian Territories
+San Marino,Wallis and Futuna
+Senegal,Austria
+Somalia,Morocco
+Suriname,Burkina Faso
+S�o Tom� and Pr�ncipe,Poland
+El Salvador,Guadeloupe
+Syria,Ethiopia
+Swaziland,R�union
+Turks and Caicos Islands,Suriname
+Chad,Saudi Arabia
+French Southern Territories,Saint Kitts and Nevis
+Togo,Haiti
+Thailand,Lesotho
+Tajikistan,Cameroon
+Tokelau,Djibouti
+Timor-Leste,Suriname
+Turkmenistan,Kiribati
+Tunisia,Gambia
+Tonga,British Virgin Islands
+Turkey,Saint Helena
+Trinidad and Tobago,Moldova
+Tuvalu,Christmas Island
+Taiwan,Falkland Islands [Islas Malvinas]
+Tanzania,Iraq
+Ukraine,Bangladesh
+Uganda,Sierra Leone
+United States,Canada
+Uruguay,Antarctica
+Uzbekistan,Thailand
+Vatican City,British Indian Ocean Territory
+Saint Vincent and the Grenadines,Zimbabwe
+Venezuela,Western Sahara
+British Virgin Islands,Falkland Islands [Islas Malvinas]
+U.S. Virgin Islands,Qatar
+Vietnam,Martinique
+Vanuatu,Mozambique
+Wallis and Futuna,Nicaragua
+Samoa,Slovakia
+Kosovo,Lebanon
+Yemen,Egypt
+Mayotte,Libya
+South Africa,British Indian Ocean Territory
+Zambia,Macau
+Zimbabwe,Gambia
+Andorra,Myanmar [Burma]
+United Arab Emirates,Singapore
+Afghanistan,Netherlands Antilles
+Antigua and Barbuda,Suriname
+Anguilla,Saint Helena
+Albania,United Arab Emirates
+Armenia,Azerbaijan
+Netherlands Antilles,Brazil
+Angola,Sierra Leone
+Antarctica,Malta
+Argentina,New Caledonia
+American Samoa,Chile
+Austria,Afghanistan
+Australia,Togo
+Aruba,Andorra
+Azerbaijan,R�union
+Bosnia and Herzegovina,Mayotte
+Barbados,Brazil
+Bangladesh,Guadeloupe
+Belgium,Laos
+Burkina Faso,Venezuela
+Bulgaria,Jordan
+Bahrain,Kenya
+Burundi,Thailand
+Benin,Benin
+Bermuda,Luxembourg
+Brunei,Norfolk Island
+Bolivia,Myanmar [Burma]
+Brazil,Kiribati
+Bahamas,Norfolk Island
+Bhutan,Papua New Guinea
+Bouvet Island,Samoa
+Botswana,Burundi
+Belarus,Chile
+Belize,Comoros
+Canada,Turkey
+Cocos [Keeling] Islands,Wallis and Futuna
+Congo [DRC],Norfolk Island
+Central African Republic,Cocos [Keeling] Islands
+Congo [Republic],United Arab Emirates
+Switzerland,Namibia
+Cook Islands,Cuba
+Chile,S�o Tom� and Pr�ncipe
+Cameroon,Falkland Islands [Islas Malvinas]
+China,Swaziland
+Colombia,Cayman Islands
+Costa Rica,Afghanistan
+Cuba,Denmark
+Cape Verde,French Guiana
+Christmas Island,Tonga
+Cyprus,Romania
+Czech Republic,Turks and Caicos Islands
+Germany,Congo [DRC]
+Djibouti,South Africa
+Denmark,Trinidad and Tobago
+Dominica,Northern Mariana Islands
+Dominican Republic,Ghana
+Algeria,Belize
+Ecuador,British Indian Ocean Territory
+Estonia,Nepal
+Egypt,Sweden
+Western Sahara,Namibia
+Eritrea,Seychelles
+Spain,Wallis and Futuna
+Ethiopia,Guernsey
+Finland,Togo
+Fiji,Greenland
+Falkland Islands [Islas Malvinas],Gaza Strip
+Micronesia,Togo
+Faroe Islands,Portugal
+France,Vanuatu
+Gabon,New Zealand
+United Kingdom,Albania
+Grenada,Sweden
+Georgia,Canada
+French Guiana,Nicaragua
+Guernsey,Bahrain
+Ghana,El Salvador
+Gibraltar,Bahamas
+Greenland,British Indian Ocean Territory
+Gambia,Philippines
+Guinea,Saudi Arabia
+Guadeloupe,Iraq
+Equatorial Guinea,Montenegro
+Greece,British Indian Ocean Territory
+South Georgia and the South Sandwich Islands,Congo [DRC]
+Guatemala,Kazakhstan
+Guam,Israel
+Guinea-Bissau,Rwanda
+Guyana,Comoros
+Gaza Strip,Isle of Man
+Hong Kong,New Zealand
+Heard Island and McDonald Islands,Switzerland
+Honduras,Niue
+Croatia,Puerto Rico
+Haiti,South Georgia and the South Sandwich Islands
+Hungary,Togo
+Indonesia,Cuba
+Ireland,Latvia
+Israel,Vatican City
+Isle of Man,Guam
+India,Bangladesh
+British Indian Ocean Territory,Mayotte
+Iraq,Mozambique
+Iran,India
+Iceland,Bolivia
+Italy,Kuwait
+Jersey,Saint Kitts and Nevis
+Jamaica,Central African Republic
+Jordan,Myanmar [Burma]
+Japan,India
+Kenya,Pakistan
+Kyrgyzstan,Kuwait
+Cambodia,Spain
+Kiribati,Russia
+Comoros,Romania
+Saint Kitts and Nevis,Saint Kitts and Nevis
+North Korea,Liechtenstein
+South Korea,Zimbabwe
+Kuwait,Peru
+Cayman Islands,Dominican Republic
+Kazakhstan,Zambia
+Laos,Germany
+Lebanon,Antarctica
+Saint Lucia,Canada
+Liechtenstein,Brunei
+Sri Lanka,French Guiana
+Liberia,Northern Mariana Islands
+Lesotho,Jamaica
+Lithuania,Saint Pierre and Miquelon
+Luxembourg,Kosovo
+Latvia,Pakistan
+Libya,French Guiana
+Morocco,Russia
+Monaco,Turkey
+Moldova,Oman
+Montenegro,Anguilla
+Madagascar,Algeria
+Marshall Islands,Palau
+Macedonia [FYROM],Ecuador
+Mali,Taiwan
+Myanmar [Burma],South Africa
+Mongolia,Congo [Republic]
+Macau,Zambia
+Northern Mariana Islands,Algeria
+Martinique,Timor-Leste
+Mauritania,Georgia
+Montserrat,Malawi
+Malta,Guyana
+Mauritius,Lebanon
+Maldives,U.S. Virgin Islands
+Malawi,Somalia
+Mexico,Cameroon
+Malaysia,Equatorial Guinea
+Mozambique,Syria
+Namibia,Nauru
+New Caledonia,Turks and Caicos Islands
+Niger,Iran
+Norfolk Island,Gaza Strip
+Nigeria,Timor-Leste
+Nicaragua,Sudan
+Netherlands,Trinidad and Tobago
+Norway,Guinea-Bissau
+Nepal,Latvia
+Nauru,Sweden
+Niue,Isle of Man
+New Zealand,South Georgia and the South Sandwich Islands
+Oman,Heard Island and McDonald Islands
+Panama,Spain
+Peru,Guyana
+French Polynesia,Dominica
+Papua New Guinea,China
+Philippines,Kyrgyzstan
+Pakistan,Central African Republic
+Poland,Bouvet Island
+Saint Pierre and Miquelon,Bhutan
+Pitcairn Islands,Timor-Leste
+Puerto Rico,United Arab Emirates
+Palestinian Territories,Solomon Islands
+Portugal,San Marino
+Palau,Sierra Leone
+Paraguay,Rwanda
+Qatar,Mauritius
+R�union,Norfolk Island
+Romania,Jordan
+Serbia,Eritrea
+Russia,Haiti
+Rwanda,Morocco
+Saudi Arabia,Tanzania
+Solomon Islands,Puerto Rico
+Seychelles,Egypt
+Sudan,Nepal
+Sweden,French Southern Territories
+Singapore,Netherlands Antilles
+Saint Helena,Liechtenstein
+Slovenia,Northern Mariana Islands
+Svalbard and Jan Mayen,Macau
+Slovakia,Macau
+Sierra Leone,British Virgin Islands
+San Marino,Moldova
+Senegal,Macau
+Somalia,Singapore
+Suriname,Liberia
+S�o Tom� and Pr�ncipe,Uganda
+El Salvador,Ecuador
+Syria,Mali
+Swaziland,Canada
+Turks and Caicos Islands,Martinique
+Chad,American Samoa
+French Southern Territories,Tonga
+Togo,Kenya
+Thailand,Denmark
+Tajikistan,El Salvador
+Tokelau,Portugal
+Timor-Leste,Antigua and Barbuda
+Turkmenistan,Dominica
+Tunisia,Brazil
+Tonga,Nepal
+Turkey,United States
+Trinidad and Tobago,Ireland
+Tuvalu,Mauritius
+Taiwan,Gambia
+Tanzania,Comoros
+Ukraine,Kenya
+Uganda,Guadeloupe
+United States,Isle of Man
+Uruguay,Svalbard and Jan Mayen
+Uzbekistan,Chile
+Vatican City,Taiwan
+Saint Vincent and the Grenadines,Monaco
+Venezuela,Lesotho
+British Virgin Islands,Dominica
+U.S. Virgin Islands,Cayman Islands
+Vietnam,Cameroon
+Vanuatu,South Korea
+Wallis and Futuna,Guinea
+Samoa,Egypt
+Kosovo,Tajikistan
+Yemen,United States
+Mayotte,Iceland
+South Africa,Malta
+Zambia,United Arab Emirates
+Zimbabwe,R�union

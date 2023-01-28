@@ -3,7 +3,7 @@ package com.example.dijkstra;
 public class Table {
     private final Country header;
     private boolean known = false;
-    private double distance = 1000000;
+    private double distance = Double.MAX_VALUE;
     private int prev;
 
     public Table(Country header) {
