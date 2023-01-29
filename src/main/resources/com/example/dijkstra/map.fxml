@@ -15,10 +15,11 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <Pane fx:id="pane" layoutY="37.0" prefHeight="750.0" prefWidth="1248.0">
+   <Pane fx:id="lines" layoutY="17.0" prefHeight="750.0" prefWidth="1248.0">
       <ImageView fx:id="image" fitHeight="750.0" fitWidth="1248.0" pickOnBounds="true" preserveRatio="true">
-         <Image url="@world.png" />
+         <Image url="@world.png"/>
       </ImageView>
+      <Pane fx:id="pane" prefHeight="750.0" prefWidth="1248.0"/>
    </Pane>
    <Label layoutX="1223.0" layoutY="147.0" prefHeight="38.0" prefWidth="94.0" text="Source:">
       <font>
@@ -32,7 +33,7 @@
    </Label>
    <ComboBox fx:id="source" layoutX="1336.0" layoutY="148.0" onAction="#fillTarget" prefWidth="150.0" />
    <ComboBox fx:id="target" layoutX="1336.0" layoutY="195.0" onAction="#calculate" prefWidth="150.0" />
-   <Button layoutX="1298.0" layoutY="255.0" mnemonicParsing="false" onAction="#calculate" prefHeight="50.0" prefWidth="94.0" text="Calculate" />
+   <Button layoutX="1242.0" layoutY="259.0" mnemonicParsing="false" onAction="#calculate" prefHeight="50.0" prefWidth="94.0" text="Calculate" />
    <Label layoutX="1223.0" layoutY="309.0" prefHeight="38.0" prefWidth="94.0" text="Path:">
       <font>
          <Font name="Comic Sans MS" size="24.0" />
@@ -46,4 +47,5 @@
    <TextField fx:id="distance" editable="false" layoutX="1224.0" layoutY="544.0" prefHeight="38.0" prefWidth="255.0" />
    <TextArea fx:id="path" editable="false" layoutX="1224.0" layoutY="351.0" prefHeight="135.0" prefWidth="255.0" wrapText="true" />
    <Button layoutX="1298.0" layoutY="603.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="94.0" text="back" />
+   <Button layoutX="1364.0" layoutY="259.0" mnemonicParsing="false" onAction="#clear" prefHeight="50.0" prefWidth="94.0" text="Clear" />
 </Pane>

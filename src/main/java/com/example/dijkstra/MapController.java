@@ -28,7 +28,9 @@ public class MapController implements Initializable {
     @FXML
     private ComboBox<String> target;
 
-    private final Alert error = new Alert(Alert.AlertType.ERROR);
+    @FXML
+    private Pane lines;
+
     ArrayList<String> items = new ArrayList<>();
 
 
@@ -36,7 +38,10 @@ public class MapController implements Initializable {
 
     @FXML
     void calculate() {
-        if (source.getValue() != null && target.getValue() != null) {
+        lines.getChildren().clear();
+        lines.getChildren().add(image);
+        lines.getChildren().add(pane);
+        if (source.getValue() != null && target.getValue() != null && !source.getValue().isEmpty() && !target.getValue().isEmpty()) {
             dijkstra(get(new Country(source.getValue())));
 
             String s = target.getValue();
@@ -44,8 +49,6 @@ public class MapController implements Initializable {
             int i = indexOf(new Country(target.getValue()));
             double distance = table[i].getDistance();
             StringBuilder path = new StringBuilder(table[i].getHeader().getName());
-            pane.getChildren().clear();
-            pane.getChildren().add(image);
             while (!s.equals(source.getValue())) {
                 int j = i;
                 i = table[i].getPrev();
@@ -55,13 +58,13 @@ public class MapController implements Initializable {
                         , (table[i].getHeader().getX() + 180.0) / 360 * 1248 - 30, 830 - ((table[i].getHeader().getY() + 90.0) / 180 * 750));
                 l.setStrokeWidth(2);
 
-                pane.getChildren().addAll(l);
+                lines.getChildren().addAll(l);
             }
             this.path.setText(path.toString());
             this.distance.setText(distance + "");
         } else {
-            error.setContentText("You must fill source and target before calculate");
-            error.show();
+            path.clear();
+            distance.clear();
         }
     }
 
@@ -109,6 +112,9 @@ public class MapController implements Initializable {
 
     @FXML
     void fillTarget() {
+        lines.getChildren().clear();
+        lines.getChildren().add(image);
+        lines.getChildren().add(pane);
         target.setItems(FXCollections.observableArrayList(items));
         target.getItems().remove(source.getValue());
     }
@@ -131,6 +137,7 @@ public class MapController implements Initializable {
         }
         return 0;
     }
+
 
     private static void fillTable(Table[] table, Set<Country> all, Country from) {
         int i = 0;
@@ -157,12 +164,72 @@ public class MapController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        for (Country one : Main.getGraph().keySet())
+        for (Country one : Main.getGraph().keySet()) {
+            Button b = new Button(one.getName());
+            b.setStyle("-fx-font-size: 5; -fx-max-height: 10;-fx-max-width: 10");
+            b.setLayoutX((one.getX() + 180.0) / 360 * 1248 - 40);
+            b.setLayoutY(820 - (one.getY() + 90.0) / 180 * 750);
+            b.hoverProperty().addListener(e -> {
+                if (b.isHover()) {
+                    Label l = new Label(b.getText());
+                    l.setLayoutY(b.getLayoutY());
+                    l.setLayoutX(b.getLayoutX());
+
+                    l.setStyle(
+                            "-fx-background-color: pink;-fx-background-radius: 40;-fx-border-color: black;\n" +
+                            "-fx-border-radius: 40; -fx-alignment: center;");
+
+                    l.hoverProperty().addListener(e1 -> {
+                        if (!l.isHover())
+                            pane.getChildren().remove(l);
+                    });
+
+                    l.setOnMouseClicked(e1 -> {
+                        if (l.isHover())
+                            if (source.getValue() == null) {
+                                source.setValue(l.getText());
+                            } else if (source.getValue() != null && target.getValue() != null) {
+                                source.setValue(l.getText());
+                                target.getItems().clear();
+
+                            } else {
+                                target.setValue(l.getText());
+                            }
+                    });
+
+                    pane.getChildren().add(l);
+                }
+            });
+
+            b.setOnMouseClicked(e1 -> {
+                if (b.isHover())
+                    if (source.getValue() == null) {
+                        source.setValue(b.getText());
+                    } else if (source.getValue() != null && target.getValue() != null) {
+                        source.setValue(b.getText());
+                        target.setValue(null);
+                    } else {
+                        target.setValue(b.getText());
+                    }
+            });
+
+            pane.getChildren().add(b);
             items.add(one.getName());
+        }
 
         Collections.sort(items);
 
         source.setItems(FXCollections.observableArrayList(items));
 
+    }
+
+    public void clear() {
+        target.setValue(null);
+        source.setValue(null);
+        path.clear();
+        distance.clear();
+        lines.getChildren().clear();
+        lines.getChildren().add(image);
+        lines.getChildren().add(pane);
     }
 }
