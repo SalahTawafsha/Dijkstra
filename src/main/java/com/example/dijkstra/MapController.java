@@ -1,18 +1,19 @@
 package com.example.dijkstra;
 
 import javafx.collections.FXCollections;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.shape.Line;
 
 import java.net.URL;
 import java.util.*;
 
 public class MapController implements Initializable {
-
+    @FXML
+    private ImageView image;
     @FXML
     private TextField distance;
 
@@ -44,10 +45,16 @@ public class MapController implements Initializable {
             int i = indexOf(new Country(target.getValue()));
             double distance = table[i].getDistance();
             StringBuilder path = new StringBuilder(table[i].getHeader().getName());
+            pane.getChildren().clear();
+            pane.getChildren().add(image);
             while (!s.equals(source.getValue())) {
+                int j = i;
                 i = table[i].getPrev();
                 path.insert(0, table[i].getHeader().getName() + "\n⬇\n");
                 s = table[i].getHeader().getName();
+                Line l = new Line((table[j].getHeader().getX() + 180.0) / 360 * 1248 - 50, 800 - ((table[j].getHeader().getY() + 90.0) / 180 * 750)
+                        , (table[i].getHeader().getX() + 180.0) / 360 * 1248 - 50, 800 - ((table[i].getHeader().getY() + 90.0) / 180 * 750));
+                pane.getChildren().add(l);
             }
             this.path.setText(path.toString());
             this.distance.setText(distance + "");
@@ -155,9 +162,6 @@ public class MapController implements Initializable {
         Collections.sort(items);
 
         source.setItems(FXCollections.observableArrayList(items));
-
-//        b.setLayoutX((x + 180.0) / 360 * 1248 - 50);
-//        b.setLayoutY(921 - ((y + 90.0) / 180 * 889 + 37));
 
     }
 }
