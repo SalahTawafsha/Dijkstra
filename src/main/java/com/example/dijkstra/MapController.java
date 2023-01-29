@@ -52,8 +52,8 @@ public class MapController implements Initializable {
                 i = table[i].getPrev();
                 path.insert(0, table[i].getHeader().getName() + "\n⬇\n");
                 s = table[i].getHeader().getName();
-                Line l = new Line((table[j].getHeader().getX() + 180.0) / 360 * 1248 - 50, 800 - ((table[j].getHeader().getY() + 90.0) / 180 * 750)
-                        , (table[i].getHeader().getX() + 180.0) / 360 * 1248 - 50, 800 - ((table[i].getHeader().getY() + 90.0) / 180 * 750));
+                Line l = new Line((table[j].getHeader().getX() + 180.0) / 360 * 1248 - 30, 830 - ((table[j].getHeader().getY() + 90.0) / 180 * 750)
+                        , (table[i].getHeader().getX() + 180.0) / 360 * 1248 - 30, 830 - ((table[i].getHeader().getY() + 90.0) / 180 * 750));
                 pane.getChildren().add(l);
             }
             this.path.setText(path.toString());

@@ -94,9 +94,7 @@ public class Main extends Application {
 
 
     private static double findCost(Country c1, Country c2) {
-        //(sin(lat1)*sin(lat2)+cos(lat1)*cos(lat2)*cos(lon2-lon1))*6371
-        // latitude = y
-        return Math.acos(Math.sin(c1.getY()) * Math.sin(c2.getY()) + Math.cos(c1.getY()) * Math.cos(c2.getY()) * Math.cos(c2.getX() - c1.getX())) * 6371;
+        return Math.sqrt(Math.pow(71.5 * (c2.getX() - c1.getX()), 2) + Math.pow(111.3 * (c2.getY() - c1.getY()), 2));
     }
 
     static Country get(Country sample, Set<Country> all) {
