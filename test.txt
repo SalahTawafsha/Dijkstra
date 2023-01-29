@@ -1,10 +1,10 @@
 6 9
-Country1,1000,2400
-Country2,2800,3000
-Country3,2400,2500
-Country4,4000,0
-Country5,4500,3800
-Country6,6000,1500
+Country1,10,24
+Country2,28,30
+Country3,24,25
+Country4,40,0
+Country5,45,38
+Country6,60,15
 Country1,Country2
 Country1,Country4
 Country2,Country3
