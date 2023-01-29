@@ -94,7 +94,16 @@ public class Main extends Application {
 
 
     private static double findCost(Country c1, Country c2) {
-        return Math.sqrt(Math.pow(71.5 * (c2.getX() - c1.getX()), 2) + Math.pow(111.3 * (c2.getY() - c1.getY()), 2));
+        double a =
+                Math.sin(deg2rad(c2.getY() - c1.getY()) / 2) * Math.sin(deg2rad(c2.getY() - c1.getY()) / 2) +
+                        Math.cos(deg2rad(c1.getY())) * Math.cos(deg2rad(c2.getY())) *
+                                Math.sin(deg2rad(c2.getX() - c1.getX()) / 2) * Math.sin(deg2rad(c2.getX() - c1.getX()) / 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return 6371 * c;  // Distance in km (R is Radius of the earth in km)
+    }
+
+    static double deg2rad(double deg) {
+        return deg * (Math.PI / 180);
     }
 
     static Country get(Country sample, Set<Country> all) {

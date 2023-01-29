@@ -17,33 +17,33 @@
     </padding>
    <Pane fx:id="pane" layoutY="37.0" prefHeight="750.0" prefWidth="1248.0">
       <ImageView fx:id="image" fitHeight="750.0" fitWidth="1248.0" pickOnBounds="true" preserveRatio="true">
-         <Image url="@world.png"/>
+         <Image url="@world.png" />
       </ImageView>
    </Pane>
-   <Label layoutX="1223.0" layoutY="142.0" prefHeight="38.0" prefWidth="94.0" text="Source:">
+   <Label layoutX="1223.0" layoutY="147.0" prefHeight="38.0" prefWidth="94.0" text="Source:">
       <font>
          <Font name="Comic Sans MS" size="24.0" />
       </font>
    </Label>
-   <Label layoutX="1223.0" layoutY="189.0" prefHeight="38.0" prefWidth="94.0" text="Target:">
+   <Label layoutX="1223.0" layoutY="194.0" prefHeight="38.0" prefWidth="94.0" text="Target:">
       <font>
          <Font name="Comic Sans MS" size="24.0" />
       </font>
    </Label>
-   <ComboBox fx:id="source" layoutX="1336.0" layoutY="143.0" onAction="#fillTarget" prefWidth="150.0" />
-   <ComboBox fx:id="target" layoutX="1336.0" layoutY="190.0" onAction="#calculate" prefWidth="150.0" />
-   <Button layoutX="1298.0" layoutY="250.0" mnemonicParsing="false" onAction="#calculate" prefHeight="50.0" prefWidth="94.0" text="Calculate" />
+   <ComboBox fx:id="source" layoutX="1336.0" layoutY="148.0" onAction="#fillTarget" prefWidth="150.0" />
+   <ComboBox fx:id="target" layoutX="1336.0" layoutY="195.0" onAction="#calculate" prefWidth="150.0" />
+   <Button layoutX="1298.0" layoutY="255.0" mnemonicParsing="false" onAction="#calculate" prefHeight="50.0" prefWidth="94.0" text="Calculate" />
    <Label layoutX="1223.0" layoutY="309.0" prefHeight="38.0" prefWidth="94.0" text="Path:">
       <font>
          <Font name="Comic Sans MS" size="24.0" />
       </font>
    </Label>
-   <Label layoutX="1216.0" layoutY="458.0" prefHeight="38.0" prefWidth="108.0" text="Distance:">
+   <Label layoutX="1216.0" layoutY="492.0" prefHeight="38.0" prefWidth="108.0" text="Distance:">
       <font>
          <Font name="Comic Sans MS" size="24.0" />
       </font>
    </Label>
-   <TextField fx:id="distance" editable="false" layoutX="1224.0" layoutY="510.0" prefHeight="38.0" prefWidth="255.0" />
-   <TextArea fx:id="path" editable="false" layoutX="1224.0" layoutY="351.0" prefHeight="99.0" prefWidth="255.0" wrapText="true" />
-   <Button layoutX="1298.0" layoutY="571.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="94.0" text="back" />
+   <TextField fx:id="distance" editable="false" layoutX="1224.0" layoutY="544.0" prefHeight="38.0" prefWidth="255.0" />
+   <TextArea fx:id="path" editable="false" layoutX="1224.0" layoutY="351.0" prefHeight="135.0" prefWidth="255.0" wrapText="true" />
+   <Button layoutX="1298.0" layoutY="603.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="94.0" text="back" />
 </Pane>
