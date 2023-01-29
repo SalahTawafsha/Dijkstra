@@ -39,7 +39,6 @@ public class MapController implements Initializable {
         if (source.getValue() != null && target.getValue() != null) {
             dijkstra(get(new Country(source.getValue())));
 
-            System.out.println("done");
             String s = target.getValue();
 
             int i = indexOf(new Country(target.getValue()));
