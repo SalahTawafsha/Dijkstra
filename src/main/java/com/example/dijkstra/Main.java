@@ -23,6 +23,8 @@ import java.util.Set;
 public class Main extends Application {
     private final Alert error = new Alert(Alert.AlertType.ERROR);
     private final static HashMap<Country, LinkedList<Node>> graph = new HashMap<>();
+    static Scene scene;
+    static BorderPane root;
 
     @Override
     public void start(Stage stage) {
@@ -80,6 +82,8 @@ public class Main extends Application {
         BorderPane pane = new BorderPane(select);
         pane.setBackground(new Background(new BackgroundFill(Color.rgb(171, 225, 243), null, null)));
         Scene scene = new Scene(pane);
+        Main.scene = scene;
+        root = pane;
         stage.setMaximized(true);
         stage.getIcons().add(new Image("icon.png"));
         stage.setTitle("Map Application");

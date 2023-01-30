@@ -70,7 +70,8 @@ public class MapController implements Initializable {
 
     @FXML
     void back() {
-        Main.main(new String[0]);
+        Main.getGraph().clear();
+        Main.scene.setRoot(Main.root);
     }
 
     public void dijkstra(Country from) {
@@ -177,7 +178,7 @@ public class MapController implements Initializable {
 
                     l.setStyle(
                             "-fx-background-color: pink;-fx-background-radius: 40;-fx-border-color: black;\n" +
-                            "-fx-border-radius: 40; -fx-alignment: center;");
+                                    "-fx-border-radius: 40; -fx-alignment: center;");
 
                     l.hoverProperty().addListener(e1 -> {
                         if (!l.isHover())
