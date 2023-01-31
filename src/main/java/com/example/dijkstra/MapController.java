@@ -6,7 +6,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
@@ -15,8 +14,6 @@ import java.net.URL;
 import java.util.*;
 
 public class MapController implements Initializable {
-    @FXML
-    private ImageView image;
     @FXML
     private TextField distance;
 
@@ -42,8 +39,6 @@ public class MapController implements Initializable {
     @FXML
     void calculate() {
         lines.getChildren().clear();
-        lines.getChildren().add(image);
-        lines.getChildren().add(pane);
         if (source.getValue() != null && target.getValue() != null && !source.getValue().isEmpty() && !target.getValue().isEmpty()) {
             dijkstra(get(new Country(source.getValue())));
 
@@ -117,8 +112,6 @@ public class MapController implements Initializable {
     @FXML
     void fillTarget() {
         lines.getChildren().clear();
-        lines.getChildren().add(image);
-        lines.getChildren().add(pane);
         target.setItems(FXCollections.observableArrayList(items));
         target.getItems().remove(source.getValue());
     }
@@ -229,7 +222,5 @@ public class MapController implements Initializable {
         path.clear();
         distance.clear();
         lines.getChildren().clear();
-        lines.getChildren().add(image);
-        lines.getChildren().add(pane);
     }
 }
