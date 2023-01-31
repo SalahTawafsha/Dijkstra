@@ -78,7 +78,9 @@ public class Main extends Application {
                 -fx-background-color: pink;
                     -fx-background-radius: 40;
                     -fx-border-color: black;
-                    -fx-border-radius: 40;""");
+                    -fx-border-radius: 40;
+                    -fx-font-family: 'Comic Sans MS';
+                    -fx-font-weight: bold""");
         BorderPane pane = new BorderPane(select);
         pane.setBackground(new Background(new BackgroundFill(Color.rgb(171, 225, 243), null, null)));
         Scene scene = new Scene(pane);
