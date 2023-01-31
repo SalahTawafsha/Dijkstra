@@ -176,12 +176,13 @@ public class MapController implements Initializable {
             b.hoverProperty().addListener(e -> {
                 if (b.isHover()) {
                     Label l = new Label(b.getText());
+                    l.setLayoutY(b.getLayoutY() - 10);
+                    l.setLayoutX(b.getLayoutX());
                     l.setPadding(new Insets(2.5));
                     l.setStyle(
                             "-fx-background-color: pink;-fx-background-radius: 40;-fx-border-color: black;\n" +
                                     "-fx-border-radius: 40; -fx-alignment: center;-fx-font-size: 12;");
 
-                    l.setLayoutY(b.getLayoutY() - 10);
 
                     l.hoverProperty().addListener(e1 -> {
                         if (!l.isHover())
@@ -191,6 +192,7 @@ public class MapController implements Initializable {
                     l.setOnMouseClicked(select(l));
 
                     pane.getChildren().add(l);
+
                 }
             });
 
