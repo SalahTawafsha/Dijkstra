@@ -1,10 +1,12 @@
 package com.example.dijkstra;
 
 import javafx.collections.FXCollections;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Line;
 
@@ -173,46 +175,26 @@ public class MapController implements Initializable {
             b.hoverProperty().addListener(e -> {
                 if (b.isHover()) {
                     Label l = new Label(b.getText());
-                    l.setLayoutY(b.getLayoutY());
-                    l.setLayoutX(b.getLayoutX());
+                    l.setLayoutY(b.getLayoutY() - 2);
+                    l.setLayoutX(b.getLayoutX() - 2);
 
                     l.setStyle(
                             "-fx-background-color: pink;-fx-background-radius: 40;-fx-border-color: black;\n" +
-                                    "-fx-border-radius: 40; -fx-alignment: center;");
+                                    "-fx-border-radius: 40; -fx-alignment: center;-fx-font-size: 12");
 
                     l.hoverProperty().addListener(e1 -> {
                         if (!l.isHover())
                             pane.getChildren().remove(l);
                     });
 
-                    l.setOnMouseClicked(e1 -> {
-                        if (l.isHover())
-                            if (source.getValue() == null) {
-                                source.setValue(l.getText());
-                            } else if (source.getValue() != null && target.getValue() != null) {
-                                source.setValue(l.getText());
-                                target.getItems().clear();
+                    l.setOnMouseClicked(select(l));
 
-                            } else {
-                                target.setValue(l.getText());
-                            }
-                    });
 
                     pane.getChildren().add(l);
                 }
             });
 
-            b.setOnMouseClicked(e1 -> {
-                if (b.isHover())
-                    if (source.getValue() == null) {
-                        source.setValue(b.getText());
-                    } else if (source.getValue() != null && target.getValue() != null) {
-                        source.setValue(b.getText());
-                        target.setValue(null);
-                    } else {
-                        target.setValue(b.getText());
-                    }
-            });
+            b.setOnMouseClicked(select(b));
 
             pane.getChildren().add(b);
             items.add(one.getName());
@@ -222,6 +204,21 @@ public class MapController implements Initializable {
 
         source.setItems(FXCollections.observableArrayList(items));
 
+    }
+
+    private EventHandler<? super MouseEvent> select(Labeled l) {
+        return (EventHandler<MouseEvent>) event -> {
+            if (l.isHover())
+                if (source.getValue() == null) {
+                    source.setValue(l.getText());
+                } else if (source.getValue() != null && target.getValue() != null) {
+                    source.setValue(l.getText());
+                    target.setValue(null);
+
+                } else {
+                    target.setValue(l.getText());
+                }
+        };
     }
 
     public void clear() {
