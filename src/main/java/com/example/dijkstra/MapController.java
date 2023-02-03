@@ -75,24 +75,21 @@ public class MapController implements Initializable {
     public void dijkstra(Country from) {
         HashMap<Country, LinkedList<Node>> graph = Main.getGraph();
 
-        fillTable(table, graph.keySet(), from);
-        Country v;
+        fillTable(graph.keySet(), from);
 
-        while (true) {
-            int index = smallest(table);
-            v = (index != -1) ? table[index].getHeader() : null;
+        PriorityQueue<Table> queue = new PriorityQueue<>(List.of(table));
+        while (queue.size() > 0) {
+            Table t = queue.remove();
 
-            if (v == null)
-                break;
-            table[index].setKnown(true);
+            t.setKnown(true);
 
-            LinkedList<Node> list = graph.get(v);
+            LinkedList<Node> list = graph.get(t.getHeader());
             for (Node node : list) {
                 int j = find(node, table);
                 if (table[j].notKnown()) {
-                    if (table[index].getDistance() + node.cost() < table[j].getDistance()) {
-                        table[j].setDistance(table[index].getDistance() + node.cost());
-                        table[j].setPrev(indexOf(v));
+                    if (t.getDistance() + node.cost() < table[j].getDistance()) {
+                        table[j].setDistance(t.getDistance() + node.cost());
+                        table[j].setPrev(indexOf(t.getHeader()));
                     }
                 }
             }
@@ -136,26 +133,13 @@ public class MapController implements Initializable {
     }
 
 
-    private static void fillTable(Table[] table, Set<Country> all, Country from) {
+    private void fillTable(Set<Country> all, Country from) {
         int i = 0;
         for (Country one : all) {
             table[i++] = new Table(one);
             if (from.equals(one))
                 table[i - 1].setDistance(0);
         }
-    }
-
-
-    private static int smallest(Table[] graph) {
-        double d = Double.MAX_VALUE;
-        int index = -1;
-        for (int i = 0; i < graph.length; i++) {
-            if (graph[i].notKnown() && graph[i].getDistance() < d) {
-                d = graph[i].getDistance();
-                index = i;
-            }
-        }
-        return index;
     }
 
     @Override

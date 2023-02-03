@@ -1,6 +1,6 @@
 package com.example.dijkstra;
 
-public class Table {
+public class Table implements Comparable<Table> {
     private final Country header;
     private boolean known = false;
     private double distance = Double.MAX_VALUE;
@@ -46,5 +46,10 @@ public class Table {
                 ", distance=" + distance +
                 ", prev=" + prev +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Table o) {
+        return Double.compare(this.getDistance(), o.getDistance());
     }
 }
