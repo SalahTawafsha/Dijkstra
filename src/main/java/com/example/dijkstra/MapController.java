@@ -31,8 +31,9 @@ public class MapController implements Initializable {
     @FXML
     private Pane lines;
 
-    ArrayList<String> items = new ArrayList<>();
+    private final ArrayList<String> items = new ArrayList<>();
 
+    private String currSource;
 
     private final Table[] table = new Table[Main.getGraph().size()];
 
@@ -40,7 +41,6 @@ public class MapController implements Initializable {
     void calculate() {
         lines.getChildren().clear();
         if (source.getValue() != null && target.getValue() != null && !source.getValue().isEmpty() && !target.getValue().isEmpty()) {
-            dijkstra(get(new Country(source.getValue())));
 
             String s = target.getValue();
 
@@ -56,7 +56,7 @@ public class MapController implements Initializable {
                         , (table[i].getHeader().getX() + 180.0) / 360 * 1248 - 30, 830 - ((table[i].getHeader().getY() + 90.0) / 180 * 750));
                 l.setStrokeWidth(2);
 
-                lines.getChildren().addAll(l);
+                lines.getChildren().add(l);
             }
             this.path.setText(path.toString());
             this.distance.setText(distance + "");
@@ -111,6 +111,9 @@ public class MapController implements Initializable {
         lines.getChildren().clear();
         target.setItems(FXCollections.observableArrayList(items));
         target.getItems().remove(source.getValue());
+        if (!source.getValue().equals(currSource))
+            dijkstra(get(new Country(source.getValue())));
+        currSource = source.getValue();
     }
 
 
