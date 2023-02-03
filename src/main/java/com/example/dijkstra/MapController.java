@@ -30,15 +30,23 @@ public class MapController implements Initializable {
 
     @FXML
     private Pane lines;
-
-    private final ArrayList<String> items = new ArrayList<>();
-
     private String currSource;
 
     private final Table[] table = new Table[Main.getGraph().size()];
 
+    private boolean isDone = false;
+
+    private final Alert error = new Alert(Alert.AlertType.ERROR);
+
     @FXML
     void calculate() {
+        if(!isDone){
+            error.setContentText("Please wait till dijkstra end");
+            error.show();
+            target.setValue(null);
+            return;
+        }
+        System.out.println("start calculate");
         lines.getChildren().clear();
         if (source.getValue() != null && target.getValue() != null && !source.getValue().isEmpty() && !target.getValue().isEmpty()) {
 
@@ -64,6 +72,8 @@ public class MapController implements Initializable {
             path.clear();
             distance.clear();
         }
+        System.out.println("end calculate");
+
     }
 
     @FXML
@@ -73,6 +83,8 @@ public class MapController implements Initializable {
     }
 
     public void dijkstra(Country from) {
+        System.out.println(from);
+        isDone = false;
         HashMap<Country, LinkedList<Node>> graph = Main.getGraph();
 
         fillTable(graph.keySet(), from);
@@ -96,6 +108,9 @@ public class MapController implements Initializable {
 
         }
 
+        isDone = true;
+
+
     }
 
     private int indexOf(Country v) {
@@ -108,12 +123,13 @@ public class MapController implements Initializable {
 
     @FXML
     void fillTarget() {
+        System.out.println("Start fillTarget");
+
         lines.getChildren().clear();
-        target.setItems(FXCollections.observableArrayList(items));
-        target.getItems().remove(source.getValue());
-        if (!source.getValue().equals(currSource))
+        if (source.getValue() != null && !source.getValue().equals(currSource))
             dijkstra(get(new Country(source.getValue())));
         currSource = source.getValue();
+        System.out.println("End fillTarget");
     }
 
 
@@ -147,6 +163,7 @@ public class MapController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        ArrayList<String> items = new ArrayList<>();
 
         for (Country one : Main.getGraph().keySet()) {
             Button b = new Button(one.getName());
@@ -185,6 +202,7 @@ public class MapController implements Initializable {
         Collections.sort(items);
 
         source.setItems(FXCollections.observableArrayList(items));
+        target.setItems(FXCollections.observableArrayList(items));
 
     }
 
