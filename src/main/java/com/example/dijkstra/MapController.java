@@ -40,13 +40,12 @@ public class MapController implements Initializable {
 
     @FXML
     void calculate() {
-        if(!isDone){
+        if (!isDone) {
             error.setContentText("Please wait till dijkstra end");
             error.show();
             target.setValue(null);
             return;
         }
-        System.out.println("start calculate");
         lines.getChildren().clear();
         if (source.getValue() != null && target.getValue() != null && !source.getValue().isEmpty() && !target.getValue().isEmpty()) {
 
@@ -55,7 +54,8 @@ public class MapController implements Initializable {
             int i = indexOf(new Country(target.getValue()));
             double distance = table[i].getDistance();
             StringBuilder path = new StringBuilder(table[i].getHeader().getName());
-            while (!s.equals(source.getValue())) {
+            int m = 0;
+            while (!s.equals(source.getValue()) && m++ < table.length) {
                 int j = i;
                 i = table[i].getPrev();
                 path.insert(0, table[i].getHeader().getName() + "\n⬇\n");
@@ -68,11 +68,15 @@ public class MapController implements Initializable {
             }
             this.path.setText(path.toString());
             this.distance.setText(distance + "");
+            if(m == table.length){
+                error.setContentText("You have a lot of processes, please try again");
+                error.show();
+                clear();
+            }
         } else {
             path.clear();
             distance.clear();
         }
-        System.out.println("end calculate");
 
     }
 
@@ -83,7 +87,6 @@ public class MapController implements Initializable {
     }
 
     public void dijkstra(Country from) {
-        System.out.println(from);
         isDone = false;
         HashMap<Country, LinkedList<Node>> graph = Main.getGraph();
 
@@ -123,13 +126,11 @@ public class MapController implements Initializable {
 
     @FXML
     void fillTarget() {
-        System.out.println("Start fillTarget");
 
         lines.getChildren().clear();
         if (source.getValue() != null && !source.getValue().equals(currSource))
             dijkstra(get(new Country(source.getValue())));
         currSource = source.getValue();
-        System.out.println("End fillTarget");
     }
 
 
