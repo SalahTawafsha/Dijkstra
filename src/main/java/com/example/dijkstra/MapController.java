@@ -38,6 +38,8 @@ public class MapController implements Initializable {
 
     private final Alert error = new Alert(Alert.AlertType.ERROR);
 
+    private PriorityQueue<Table> queue = new PriorityQueue<>();
+
     @FXML
     void calculate() {
         if (!isDone) {
@@ -68,8 +70,8 @@ public class MapController implements Initializable {
             }
             this.path.setText(path.toString());
             this.distance.setText(distance + "");
-            if(m == table.length){
-                error.setContentText("You have a lot of processes, please try again");
+            if (m > table.length) {
+                error.setContentText("can't reach, please try again");
                 error.show();
                 clear();
             }
@@ -87,13 +89,13 @@ public class MapController implements Initializable {
     }
 
     public void dijkstra(Country from) {
+        System.out.println(from);
         isDone = false;
         HashMap<Country, LinkedList<Node>> graph = Main.getGraph();
 
         fillTable(graph.keySet(), from);
 
-        PriorityQueue<Table> queue = new PriorityQueue<>(List.of(table));
-        while (queue.size() > 0) {
+        while (!queue.isEmpty()) {
             Table t = queue.remove();
 
             t.setKnown(true);
@@ -105,6 +107,7 @@ public class MapController implements Initializable {
                     if (t.getDistance() + node.cost() < table[j].getDistance()) {
                         table[j].setDistance(t.getDistance() + node.cost());
                         table[j].setPrev(indexOf(t.getHeader()));
+                        queue.add(table[j]);
                     }
                 }
             }
@@ -157,8 +160,10 @@ public class MapController implements Initializable {
         int i = 0;
         for (Country one : all) {
             table[i++] = new Table(one);
-            if (from.equals(one))
+            if (from.equals(one)) {
                 table[i - 1].setDistance(0);
+                queue.add(table[i - 1]);
+            }
         }
     }
 
