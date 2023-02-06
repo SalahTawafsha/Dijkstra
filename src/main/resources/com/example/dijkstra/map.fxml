@@ -11,47 +11,40 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: ABE1F3;" stylesheets="@style.css"
-      xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.example.dijkstra.MapController">
+<Pane prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: ABE1F3;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dijkstra.MapController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
     <Pane fx:id="pane" layoutY="50.0" prefHeight="776.0" prefWidth="1248.0">
         <ImageView fitHeight="750.0" fitWidth="1248.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@world.png"/>
+            <Image url="@world.png" />
         </ImageView>
-        <Pane fx:id="lines" prefHeight="750.0" prefWidth="1248.0"/>
+        <Pane fx:id="lines" prefHeight="750.0" prefWidth="1248.0" />
     </Pane>
     <Label layoutX="1223.0" layoutY="147.0" prefHeight="38.0" prefWidth="94.0" text="Source:">
         <font>
-            <Font name="Comic Sans MS" size="24.0"/>
+            <Font name="Comic Sans MS" size="24.0" />
         </font>
     </Label>
     <Label layoutX="1223.0" layoutY="194.0" prefHeight="38.0" prefWidth="94.0" text="Target:">
         <font>
-            <Font name="Comic Sans MS" size="24.0"/>
+            <Font name="Comic Sans MS" size="24.0" />
         </font>
     </Label>
-    <ComboBox fx:id="source" layoutX="1336.0" layoutY="148.0" onAction="#fillTarget" prefWidth="150.0"/>
-    <ComboBox fx:id="target" layoutX="1336.0" layoutY="195.0" onAction="#calculate" prefWidth="150.0"/>
-    <Button layoutX="1242.0" layoutY="256.0" mnemonicParsing="false" onAction="#calculate" prefHeight="50.0"
-            prefWidth="94.0" text="Calculate"/>
+    <ComboBox fx:id="source" layoutX="1336.0" layoutY="148.0" onAction="#fillTarget" prefWidth="150.0" />
+    <ComboBox fx:id="target" layoutX="1336.0" layoutY="195.0" onAction="#calculate" prefWidth="150.0" />
     <Label layoutX="1223.0" layoutY="313.0" prefHeight="38.0" prefWidth="94.0" text="Path:">
         <font>
-            <Font name="Comic Sans MS" size="24.0"/>
+            <Font name="Comic Sans MS" size="24.0" />
         </font>
     </Label>
     <Label layoutX="1216.0" layoutY="495.0" prefHeight="38.0" prefWidth="108.0" text="Distance:">
         <font>
-            <Font name="Comic Sans MS" size="24.0"/>
+            <Font name="Comic Sans MS" size="24.0" />
         </font>
     </Label>
-    <TextField fx:id="distance" editable="false" layoutX="1224.0" layoutY="535.0" prefHeight="38.0" prefWidth="255.0"/>
-    <TextArea fx:id="path" editable="false" layoutX="1224.0" layoutY="353.0" prefHeight="135.0" prefWidth="255.0"
-              wrapText="true"/>
-    <Button layoutX="1298.0" layoutY="599.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="94.0"
-            text="back"/>
-    <Button layoutX="1364.0" layoutY="256.0" mnemonicParsing="false" onAction="#clear" prefHeight="50.0"
-            prefWidth="94.0" text="Clear"/>
+    <TextField fx:id="distance" editable="false" layoutX="1224.0" layoutY="535.0" prefHeight="38.0" prefWidth="255.0" />
+    <TextArea fx:id="path" editable="false" layoutX="1224.0" layoutY="353.0" prefHeight="135.0" prefWidth="255.0" wrapText="true" />
+    <Button layoutX="1298.0" layoutY="599.0" mnemonicParsing="false" onAction="#back" prefHeight="50.0" prefWidth="94.0" text="back" />
+    <Button layoutX="1298.0" layoutY="263.0" mnemonicParsing="false" onAction="#clear" prefHeight="50.0" prefWidth="94.0" text="Clear" />
 </Pane>

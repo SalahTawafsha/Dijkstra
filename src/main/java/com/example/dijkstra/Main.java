@@ -2,14 +2,13 @@ package com.example.dijkstra;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.paint.Color;
+import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -75,14 +74,21 @@ public class Main extends Application {
         });
 
         select.setStyle("""
-                -fx-background-color: pink;
+                -fx-background-color: rgba(0,218,255,0.22);
+                -fx-text-fill: #eccb7c;
                     -fx-background-radius: 40;
                     -fx-border-color: black;
                     -fx-border-radius: 40;
                     -fx-font-family: 'Comic Sans MS';
                     -fx-font-weight: bold""");
-        BorderPane pane = new BorderPane(select);
-        pane.setBackground(new Background(new BackgroundFill(Color.rgb(171, 225, 243), null, null)));
+
+        Label title = new Label("Welcome To Map Application.");
+        title.setStyle("-fx-font-family: 'Comic Sans MS'; -fx-font-size: 20; -fx-text-fill: #eccb7c");
+
+        VBox box = new VBox(25, title, select);
+        box.setAlignment(Pos.CENTER);
+        BorderPane pane = new BorderPane(box);
+        pane.setBackground(new Background(new BackgroundImage(new Image("placeholder-world.png"), null, null, null, new BackgroundSize(1, 1, true, true, false, false))));
         Scene scene = new Scene(pane);
         Main.scene = scene;
         root = pane;
