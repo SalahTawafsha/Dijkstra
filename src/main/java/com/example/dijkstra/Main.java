@@ -4,9 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
@@ -27,6 +25,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
+        stage.setResizable(false);
         FileChooser file = new FileChooser();
         file.setInitialDirectory(new File("."));
         file.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("TXT files", ".txt"));
@@ -49,7 +48,7 @@ public class Main extends Application {
                 scan.nextLine();
                 while (countries-- != 0) {
                     String[] tokens = scan.nextLine().split(",");
-                    graph.put(new Country(tokens[0], Double.parseDouble(tokens[2]), Double.parseDouble(tokens[1])), new LinkedList<>());
+                        graph.put(new Country(tokens[0], Double.parseDouble(tokens[1]), Double.parseDouble(tokens[2])), new LinkedList<>());
                 }
 
                 while (edges-- != 0) {
@@ -74,7 +73,7 @@ public class Main extends Application {
         });
 
         select.setStyle("""
-                -fx-background-color: rgba(0,218,255,0.22);
+                -fx-background-color: rgba(128,128,128,0.62);
                 -fx-text-fill: #eccb7c;
                     -fx-background-radius: 40;
                     -fx-border-color: black;
@@ -83,12 +82,12 @@ public class Main extends Application {
                     -fx-font-weight: bold""");
 
         Label title = new Label("Welcome To Map Application.");
-        title.setStyle("-fx-font-family: 'Comic Sans MS'; -fx-font-size: 20; -fx-text-fill: #eccb7c");
+        title.setStyle("-fx-font-family: 'Comic Sans MS'; -fx-font-size: 20; -fx-text-fill: #eccb7c; -fx-background-color: rgba(0,0,0,0.34); -fx-padding: 10;-fx-background-radius: 40;");
 
         VBox box = new VBox(25, title, select);
         box.setAlignment(Pos.CENTER);
         BorderPane pane = new BorderPane(box);
-        pane.setBackground(new Background(new BackgroundImage(new Image("placeholder-world.png"), null, null, null, new BackgroundSize(1, 1, true, true, false, false))));
+        pane.setBackground(new Background(new BackgroundImage(new Image("placeholder-world.png"), null, null, null, new BackgroundSize(1, 1.15, true, true, false, false))));
         Scene scene = new Scene(pane);
         Main.scene = scene;
         root = pane;
