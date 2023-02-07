@@ -89,7 +89,6 @@ public class MapController implements Initializable {
     }
 
     public void dijkstra(Country from) {
-        System.out.println(from);
         isDone = false;
         HashMap<Country, LinkedList<Node>> graph = Main.getGraph();
 
