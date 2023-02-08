@@ -38,7 +38,7 @@ public class MapController implements Initializable {
 
     private final Alert error = new Alert(Alert.AlertType.ERROR);
 
-    private PriorityQueue<Table> queue = new PriorityQueue<>();
+    private final PriorityQueue<Table> queue = new PriorityQueue<>();
 
     @FXML
     void calculate() {
@@ -101,7 +101,7 @@ public class MapController implements Initializable {
 
             LinkedList<Node> list = graph.get(t.getHeader());
             for (Node node : list) {
-                int j = find(node, table);
+                int j = indexOf(node.country());
                 if (table[j].notKnown()) {
                     if (t.getDistance() + node.cost() < table[j].getDistance()) {
                         table[j].setDistance(t.getDistance() + node.cost());
@@ -146,17 +146,9 @@ public class MapController implements Initializable {
         return null;
     }
 
-    private static int find(Node node, Table[] table) {
-        for (int i = 0; i < table.length; i++) {
-            if (table[i].getHeader().equals(node.country()))
-                return i;
-        }
-        return 0;
-    }
-
-
     private void fillTable(Set<Country> all, Country from) {
         int i = 0;
+
         for (Country one : all) {
             table[i++] = new Table(one);
             if (from.equals(one)) {
